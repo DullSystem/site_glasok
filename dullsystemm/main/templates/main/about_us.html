@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block "ГлазОК" %}О нас{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'main/css/about_us.css' %}" >
+</head>
+<body>
+<div class="d-flex " style="background: #20B2AA">
+      <a href="/" class="d-flex  ">
+       <span class="name">Офтальмологический кабинет "ГлазОК"</span>
+      </a>
+
+
+<!--          Если пользователь авторизован то будет отображен логин-->
+          {% if request.user.is_authenticated %}
+          <a class="authorization" href="{% url 'logout' %}">{{user.username}}(Выйти)</a>
+          {% else %}
+            <a class="authorization" href="{% url 'login' %}">Авторизация на сайте</a>
+          {% endif %}
+          <a class="home" href="/">Главная страница</a>
+          <a href="{% url 'cart:cart_detail' %}" class="icon_basket">
+
+              <div class="quantity_basket">
+                  {% with total_items=cart|length %}
+                {% if cart|length > 0 %}
+                  <b>{{ total_items }}</b>
+                {% endif %}
+                  {% endwith %}</div>
+
+              <svg width="32" height="30"  style="margin-right:17px;margin-top:3px; background-color: #FFFFFF;border-radius: 20px;" viewBox="-9 0 45 33" fill="#FFFFFF" >
+              <path d="M5.92857 13.1829L6.92857 5.04025C6.92857 3.24143 8.39964 1.7832 10.2143 1.7832H14.7857C16.6004
+              1.7832 18.0714 3.24143 18.0714 5.04025L19.0714 13.1829M2 8.29729L1 26.7539C1 28.5527 2.47106 30.0109
+              4.28571 30.0109H20.7143C22.5289 30.0109 24 28.5527 24 26.7539L23 8.29729H2Z"
+                    stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+              <form action="{% url 'search' %}" method="get" class="search">
+                 <input type="search" name="q" class="input_search" placeholder="Поиск по аксессуарам глаза">
+                  <i class="fa fa-search"></i>
+                </form>
+
+    </div>
+
+
+<p class="text_name">Офтальмологический кабинет "Глазок"<img class="glas" src="{% static 'main/img/Glas.jpg' %}" ></p>
+<div class="block">
+    <p><h2><b>Описание:</b></h2></p>
+        Офтальмологический кабинет «Глазок» находится по адресу: Тверская область, г.Торжок, ул.Металлистов, д. 1Д.
+        Мы занимаемся диагностикой широкого спектра глазных патологий и подбором очков, линз. Приём ведёт врач высшей категории.
+        Кабинет оборудован удобной зоной ожидания, имеется детский уголок.
+
+        Материально-техническая база Офтальмологического кабинета «Глазок» представлена современной мебелью и
+        передовыми типами диагностического оборудования. Всё профессиональное оборудование проходит своевременную проверку качества.<br>
+
+        <img tabindex="1"  style="margin-top: 50px;" class="equipment" src="{% static 'main/img/equipment1.jpg' %}" >
+        <img tabindex="1"  style="margin-top: 50px;" class="equipment" src="{% static 'main/img/equipment2.jpg' %}" >
+        <img tabindex="1"  style="margin-top: 50px;" class="equipment" src="{% static 'main/img/equipment3.jpg' %}" >
+        <img tabindex="1"  style="margin-top: 50px;" class="equipment" src="{% static 'main/img/equipment4.jpg' %}" >
+        <img tabindex="1"  style="margin-bottom: 50px;"  class="equipment" src="{% static 'main/img/equipment5.jpg' %}" >
+        <img tabindex="1"  style="margin-bottom: 50px;"  class="equipment" src="{% static 'main/img/equipment6.jpg' %}" >
+        <img tabindex="1"  style="margin-bottom: 50px;"  class="equipment" src="{% static 'main/img/equipment7.jpg' %}" >
+        <img tabindex="1"  style="margin-bottom: 50px;"  class="equipment" src="{% static 'main/img/equipment8.jpg' %}" >
+        <br>
+        Деятельность учреждения лицензирована. Правовые документы были выданы ему 24 декабря 2019 года.<br>
+        <img tabindex="1" class="lizenzia" src="{% static 'main/img/lizenzia1.jpg' %}" >
+        <img tabindex="1" class="lizenzia" src="{% static 'main/img/lizenzia2.jpg' %}" ></p>
+
+<p><h2><b>Услуги:</b></h2><br>
+В Кабинете офтальмолога «Глазок» осуществляется высокоточная диагностика глазных патологий.
+    Для их выявления используются следующие методы: определение остроты зрения, авторефрактометрия,
+    измерение внутриглазного давления, периметрия, биомикроскопия и офтальмоскопия.
+    Здесь может осуществляться осмотр детей до 1 года. В учреждении проводится подбор очков и контактных линз.</p>
+<p><h2><b>Проезд:</b></h2><br>
+До Кабинете офтальмолога «Глазок» удобнее всего добираться на общественном транспорте:
+    автобусами № 5, 32а, 328 и маршрутными такси № 21, 22, 32, 33, 38а.
+    Двигаться необходимо до остановочного пункта «Ул. Металлистов».
+    Покинув транспортное средство, нужно повернуть на улицу с одноименным названием и пройти к зданию № 1д.</p>
+    </div>
+
+</body>
+</html>
+<div id = "Information"  style="font-family: CENTURY GOTHIC, sans-serif;">"ГлазОК" Тверская область, город Торжок, ул. Металлистов, д.1"Д"  ОГРН:00000000000</div>

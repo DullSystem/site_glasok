@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectResources">
+    <resource url="Django" location="$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/standardSchemas/xhtml11/xhtml-object-1.mod" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (site)" project-jdk-type="Python SDK" />
+  <component name="PyCharmProfessionalAdvertiser">
+    <option name="shown" value="true" />
+  </component>
+</project>

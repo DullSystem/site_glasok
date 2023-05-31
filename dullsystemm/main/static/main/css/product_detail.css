@@ -1,0 +1,743 @@
+body{background: #FFFFFF;
+    color: #000000;
+    background-size: 100%;
+    background-attachment: fixed;
+    }
+
+#Information{
+    position: absolute;
+    margin-top: 30px;
+    right: 25%;
+    text-align: center;
+    font-size: 12px;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+    /* Глазок */
+.d-flex {
+    height: 55px;
+    font-size: 27px;
+    text-decoration: none;
+    font-family: "CENTURY GOTHIC", sans-serif;
+}
+
+.name {
+    color:#FFFFFF;
+    margin-left:70px;
+    white-space: pre;
+}
+
+
+    /* О нас */
+.about_us {
+    white-space: pre;
+    margin-right:17px;
+    margin-top:13px;
+    margin-left: 387px;
+    color:#FFFFFF;
+    font:menu;
+    font-size: 17px;
+    text-decoration: none;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+.about_us:hover {
+    color:#FFFFFF;
+}
+
+    /*Авторизация*/
+.authorization {
+    white-space: pre;
+    margin-right:17px;
+    margin-top:13px;
+    font:menu;
+    font-size: 17px;
+    color:#FFFFFF;
+    text-decoration: none;
+    text-align: center;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+.authorization:hover {
+    color:#FFFFFF;
+}
+
+    /*Ссылка на главную страницу*/
+.home {
+    white-space: pre;
+    margin-right: 17px;
+    margin-top: 13px;
+    font:menu;
+    font-size: 17px;
+    color:#FFFFFF;
+    text-decoration: none;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+.home:hover {
+    color:#FFFFFF;
+}
+
+
+/*- Поиск - */
+.search{
+    position: absolute;
+    top: 0;
+    left: 800px;
+    transform: translate(-30%,-30%);
+    transition: all 1s;
+    width: 30px;
+    height: 50px;
+    background: #20B2AA;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid #20B2AA;
+    padding: 0px;
+    margin-top:1.1%
+
+}
+
+.input_search{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 35px;
+    line-height: 75px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 0.6em;
+    border-radius: 20px;
+    padding:  10px;
+
+}
+
+.fa{
+    box-sizing: border-box;
+    padding: 7px;
+    width: 30px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.0em;
+    transition: all 1s;
+
+}
+
+.search:hover{
+    width: 200px;
+    cursor: pointer;
+
+}
+
+.search:hover input{
+    display: block;
+
+}
+
+.search:hover .fa{
+    background: #20B2AA;
+    color: #000000;
+}
+
+
+/*- Заголовок начинается здесь - */
+h3{color: #000000;
+font-family: CENTURY GOTHIC, sans-serif;
+}
+
+h5{color: #000000;
+font-family: CENTURY GOTHIC, sans-serif;
+}
+
+h6{color: #000000;
+font-family: CENTURY GOTHIC, sans-serif;
+}
+
+/*- блок товара - */
+
+
+.product_name {
+    text-align: center;
+    font-size: 20pt;
+    margin-top: 10px;
+}
+
+.block{
+        right: 30%;
+        text-align: center;
+}
+
+.select {
+    margin-left: 0px;
+    margin-top: 0px;
+
+}
+
+/*- цена товара - */
+.price{
+        position: absolute;
+        width: 240px;
+        font-size: 20pt;
+        margin-top: 40px;
+        color: white;
+        text-align: center;
+        margin-left: 978px;
+
+        border-radius: 10px;
+        background-color: #20B2AA;
+
+        }
+
+/*- Характеристики товара - */
+.characteristics{
+        position: absolute;
+        text-align: left;
+        margin-top: 145px;
+        margin-left: 880px;
+        font-size: 15pt;
+        line-height: 2.0;
+        font-family: CENTURY GOTHIC, sans-serif;
+        }
+/*- Описание товара товара - */
+.description{
+        position: absolute;
+        width: 1120px;
+        text-align: justify;
+        margin-top: 450px;
+        margin-left: 180px;
+        font-size: 10pt;
+        line-height: 1.9;
+        text-indent: 20px;
+        word-break:break-all;
+        font-family: CENTURY GOTHIC, sans-serif;
+        border-top: 1px solid #20B2AA;
+        padding: 15px 0;
+        }
+.description_text {
+    width: 1100px;
+    max-height: 400px;
+    word-break:break-all;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.description_text::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f9f9fd;
+}
+.description_text::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #A9A9A9;
+}
+.description_text::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background-color: #f9f9fd;
+}
+
+.description_name {
+font-size: 17pt;
+}
+
+/*- Кривизна - */
+.curvature{position:absolute;
+            width: 35px;
+            font-size: 13pt;
+            margin-top: 190px;
+            margin-left: 1075px;
+            text-align: center;
+            background-color: #20B2AA;
+            color: white;
+            border-radius: 5px;
+}
+
+/*- Оптическая сила - */
+.optical{position:absolute;
+margin-top: 300px;
+}
+
+/*- Анимация картинки - */
+.adaptivny-slayder {
+    position: absolute;
+    height: 320px;
+    width: 390px;
+    text-align: center;
+    left: 350px;
+    top: 140px;
+     /*border: 4px solid #20B2AA;*/
+
+}
+
+.adaptivny-slayder input[name="kadoves"] {
+  display: none;
+  right: 50%;
+}
+
+.kadoves {
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  text-align: center;
+  width: 100%;
+
+}
+
+.kadoves label {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+  margin: 0 3px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, .8);
+  border-radius: 50%;
+  border: 5px solid #20B2AA;
+  background-color: #20B2AA;
+}
+
+#slaid1:checked~.kadoves label[for="slaid1"] {
+  background-color: white;
+}
+
+#slaid2:checked~.kadoves label[for="slaid2"] {
+  background-color: white;
+}
+
+.image_product {
+ width: 310px;
+ height: 250px;
+}
+
+.image_product1 {
+ width: 310px;
+ height: 310px;
+}
+
+.adaptivny-slayder-lasekun {
+  overflow: hidden;
+
+}
+
+.abusteku-deagulus {
+  display: flex;
+  width: 100%;
+  transition: all 0.5s;
+
+}
+
+.abusteku-deagulus img {
+  width: 100%;
+  flex-shrink:0;
+}
+
+#slaid1:checked~adaptivny-slayder-lasekun abusteku-deagulus {
+  transform: translate(0);
+}
+
+#slaid2:checked~.adaptivny-slayder-lasekun .abusteku-deagulus {
+  transform: translateX(-100%);
+}
+
+
+/*- Колличество упаковок - */
+.submenu-link {position: absolute;
+        margin-top: 150px;
+        margin-left: 1135px;
+        text-align: center;
+        cursor: pointer;
+
+}
+
+.submenu-link1 {position: absolute;
+        margin-top: 228px;
+        margin-left: 1135px;
+        text-align: center;
+        cursor: pointer;
+}
+
+.submenu {
+      background: rgba(32, 178, 170, 0.9);
+      border-radius: 5px;
+      margin-top: 0px;
+      margin-left: -60px;
+      z-index: 5;
+      width: 140px;
+      height: 30px;
+      font-size: 11pt;
+      font-family: "CENTURY GOTHIC", sans-serif;
+      font-weight: bold;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 0px 0px;
+      cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*- Корзина - */
+.icon_basket{
+ position: relative;
+ float:left;
+ overflow: hidden;
+ transition: all 0.2s linear;
+ display: block;
+ margin: 3px;
+
+}
+.icon_basket:hover{
+ transform: scale(1.05);
+}
+.icon_basket:hover .a-btn-symbol{
+ opacity: 0.5;
+ transform: rotate(360deg);
+}
+.icon_basket:active{
+ transform: scale(1.1);
+}
+
+/* Количество товара */
+.quantity_basket {
+    display: block;
+    width: 10px;
+    height: 14px;
+    text-align: center;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 20px;
+    color: #000000;
+    font-size:9px;
+    }
+
+/*- Кнопка в корзину - */
+.basket{position: absolute;
+margin-top: 350px;
+margin-left: 780px;
+
+}
+
+.btn-default {
+position: absolute;
+margin-left: 300px;
+margin-top: 330px;
+font-size: 19px;
+color: rgb(255, 255, 255);
+font-weight: bold;
+text-transform: uppercase;
+vertical-align: top;
+
+background-color: rgb(128, 128, 128);
+padding: 0 10px;
+border-radius: 10px;
+height: 50px;
+
+}
+
+.btn-default:hover{
+background-color:#20B2AA;
+color:#FFFFFF;
+}
+
+
+a {
+text-decoration: none;
+}
+
+/*- Отзывы и звёзды - */
+
+.rating-area {
+    position: absolute;
+	overflow: hidden;
+	width: 265px;
+	margin-top: 385px;
+    margin-left: 380px;
+}
+.rating-area:not(:checked) > input {
+	display: none;
+}
+.rating-area:not(:checked) > label {
+	float: right;
+	width: 42px;
+	padding: 0;
+	cursor: pointer;
+	font-size: 32px;
+	line-height: 32px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+.rating-area:not(:checked) > label:before {
+	content: '★';
+}
+.rating-area > input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+	color: gold;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px goldenrod;
+}
+.rate-area > label:active {
+	position: relative;
+}
+/*- Показывает результат в звёздах - */
+.rating-result {
+    position: absolute;
+	width: 465px;
+	margin-left: 500px;
+	margin-top: 0px;
+	color: #000000;
+	font-size: 15pt;
+
+}
+.rating-result span {
+	padding: 0;
+	font-size: 22px;
+	margin: 0 3px;
+	line-height: 1;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+.rating-result > span:before {
+	content: '★';
+}
+.rating-result > span.active {
+	color: gold;
+	text-shadow: 1px 1px #c60;
+
+}
+
+/* мобильная версия */
+@media (max-width: 800px) {
+  .d-flex {
+        max-width: 992x;
+        height: 150px;
+    }
+    /*Глазок*/
+    .name {
+        white-space: pre;
+        font-size: 19px;
+        margin-left:30px;
+        }
+
+    /* О нас */
+    .about_us {
+    white-space: pre;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 0px;
+    margin-top: 50px;
+    margin-left: -400px;
+    }
+
+    /* Ссылка на главную страницу */
+    .home {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 0px;
+    }
+
+    /* Авторизация */
+
+    .authorization {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-right: 0px;
+    }
+
+
+    /*корзина*/
+    .icon_basket{
+    position: absolute;
+    margin-left: 370px;
+    margin-top: 97px;
+    }
+
+    /*поиск*/
+    .search{
+    margin-top: 110px;
+    left: 0px;
+    height: 20px;
+    left: 20%;
+    }
+
+    .input_search {
+        width: 100%;;
+        height: 10px;
+        left: -15px;
+        font-size: 0.3em;
+    }
+
+    .fa {
+        height: 29px;
+        font-size: 0.9em;
+        padding: 3px;
+        transition: all 0.1s;
+    }
+
+    .search:hover .fa{
+        background: #20B2AA;
+        color: #000000;
+        }
+
+    .rating-result {
+	width: 365px;
+	margin-left: 50px;
+	margin-top: 10px;
+	font-size: 12pt;
+    }
+
+    .rating-area {
+	width: 265px;
+	margin-top: 310px;
+    margin-left: 175px;
+    }
+
+    .rating-area:not(:checked) > label {
+	float: right;
+	width: 42px;
+	padding: 0;
+	cursor: pointer;
+	font-size: 19px;
+	line-height: 32px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+    }
+
+    .product_name {
+    text-align: center;
+    font-size: 15pt;
+    margin-top: 10px;
+    }
+
+    .characteristics{
+    position: absolute;
+    text-align: left;
+    margin-top: 356px;
+    margin-left: 33px;
+    font-size: 12pt;
+    }
+
+    .adaptivny-slayder {
+    height: 190px;
+    width: 250px;
+    left: 105px;
+    top: 275px;
+     /*border: 4px solid #20B2AA;*/
+    }
+
+    .image_product {
+     width: 110px;
+     height: 170px;
+    }
+
+    .image_product1 {
+     width: 110px;
+     height: 160px;
+    }
+
+    .price{
+    width: 140px;
+    font-size: 12pt;
+    margin-top: 320px;
+    margin-left: 30px;
+    border-radius: 5px;
+    }
+
+    /*- Колличество упаковок - */
+    .submenu-link {
+    margin-top: 358px;
+    margin-left: 298px;
+    }
+
+    .submenu-link1 {
+    margin-top: 422px;
+    margin-left: 300px;
+    }
+
+    .submenu {
+      width: 50px;
+      height: 20px;
+      font-size: 8pt;
+    }
+
+
+    .curvature{
+    width: 35px;
+    font-size: 8pt;
+    margin-top: 395px;
+    margin-left: 245px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    }
+
+    .btn-default {
+    margin-left: -195px;
+    margin-top: 460px;
+    font-size: 12px;
+    padding: 0 5px;
+    border-radius: 5px;
+    height: 30px;
+    }
+
+    /*- Описание товара товара - */
+    .description{
+            position: absolute;
+            width: 400px;
+            text-align: justify;
+            margin-top: 520px;
+            margin-left: 35px;
+            font-size: 7pt;
+            line-height: 1.9;
+            text-indent: 10px;
+            word-break:break-all;
+            font-family: CENTURY GOTHIC, sans-serif;
+            border-top: 1px solid #20B2AA;
+            border-bottom: 1px solid #20B2AA;
+            padding: 15px 0;
+            }
+    .description_text {
+        width: 400px;
+        max-height: 400px;
+        word-break:break-all;
+        overflow-y: auto;
+        overflow-x: auto;
+    }
+
+    .description_name {
+    font-size: 12pt;
+    }
+
+    #Information{position: absolute;
+    margin-top: 20px;
+    right: 3em;
+    text-align: center;
+    font-size: 9px;
+    }
+
+    }

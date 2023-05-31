@@ -1,0 +1,16 @@
+{% block title %}<title>Сбросить пароль</title>{% endblock %}
+
+{% block content %}
+    <h1>Сбросить пароль</h1>
+    {% if validlink %}
+        <p>Пожалуйста, введите новый пароль дважды:</p>
+        <form action="." method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <p><input type="submit" value="Изменить свой пароль"/></p>
+        </form>
+    {% else %}
+        <p>Ссылка для сброса пароля недействительна, возможно, потому, что она
+             уже был использован. Пожалуйста, запросите сброс нового пароля.</p>
+    {% endif %}
+{% endblock %}

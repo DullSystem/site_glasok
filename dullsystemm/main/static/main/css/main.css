@@ -1,0 +1,781 @@
+body{background: #FFFFFF;
+    color: #000000;
+    background-size: 100%;
+    background-attachment: fixed;
+    }
+    #Information{position: absolute;
+    bottom: 0em;
+    right: 43em;
+    text-align: center;
+    margin-top:100%;
+    font-size: 12px
+
+    }
+
+.d-flex {
+    height: 55px;
+    font-size: 27px;
+    text-decoration: none;
+
+    font-family: "CENTURY GOTHIC", sans-serif;
+}
+
+.name {
+    color:#FFFFFF;
+    margin-left:70px;
+    white-space: pre;
+}
+
+
+    /* О нас */
+.about_us {
+    white-space: pre;
+    margin-right:17px;
+    margin-top:13px;
+    margin-left: 550px;
+    color:#FFFFFF;
+    font:menu;
+    font-size: 17px;
+    text-decoration: none;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+.about_us:hover {
+    color:#FFFFFF;
+}
+
+    /*Авторизация*/
+.authorization {
+    white-space: pre;
+    margin-right:17px;
+    margin-top:13px;
+    font:menu;
+    font-size: 17px;
+    color:#FFFFFF;
+    text-decoration: none;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+.authorization:hover {
+    color:#FFFFFF;
+}
+
+
+
+
+
+
+/*- Поиск - */
+.search{
+    position: absolute;
+    top: 0;
+    left: 800px;
+    transform: translate(-30%,-30%);
+    transition: all 1s;
+    width: 30px;
+    height: 50px;
+    background: #20B2AA;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid #20B2AA;
+    padding: 0px;
+    margin-top:1.1%
+
+}
+
+.input_search{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 35px;
+    line-height: 75px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 0.6em;
+    border-radius: 20px;
+    padding:  10px;
+
+}
+
+.fa{
+    box-sizing: border-box;
+    padding: 7px;
+    width: 30px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.0em;
+    transition: all 1s;
+
+}
+
+.search:hover{
+    width: 200px;
+    cursor: pointer;
+
+}
+
+.search:hover input{
+    display: block;
+
+}
+
+.search:hover .fa{
+    background: #20B2AA;
+    color: #000000;
+
+
+}
+/*Верхний блок с кнопками */
+.button {margin-left: 30px;
+}
+
+/*Price*/
+.price{
+    margin-left:223px;
+    border: none;
+    margin-top: 20px;
+    background:#FFFFFF;
+    width: 220px;
+    height: 220px;
+}
+
+#price {
+    max-width: 1100px;
+    height: 610px;
+    text-align: center;
+    padding: 25px;
+    border: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    display: block;
+    position: fixed;
+    top: -9999px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: #20B2AA;
+    opacity: 1,2;
+    line-height: 1.2;
+    font-size: 15pt;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+#price::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f9f9fd;
+}
+#price::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #A9A9A9;
+}
+#price::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background-color: #f9f9fd;
+}
+
+#price:target {display: block;
+transition: .5s all;
+top: 0;
+box-shadow: 0 0 0 5000px rgba(128, 128, 128, 0.5);
+
+}
+  /* формируем кнопку закрытия */
+.close {
+position: absolute;
+top: 5px;
+right: 5px;padding: 0;
+width: 20px;
+height: 20px;
+border: 2px solid #ccc;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+-ms-border-radius: 15px;
+-o-border-radius: 15px;
+border-radius: 15px;
+background-color: rgba(32, 178, 170, 0.8);
+-webkit-box-shadow: 0px 0px 10px #000;
+-moz-box-shadow: 0px 0px 10px #000;
+box-shadow: 0px 0px 10px #000;
+text-align: center;
+text-decoration: none;
+font-weight: bold;
+line-height: 10px;
+/* задаём значения и эффект перехода при наведении */
+-webkit-transition: all ease .3s;
+-moz-transition: all ease .3s;
+-ms-transition: all ease .3s;
+-o-transition: all ease .3s;
+transition: all ease .3s;
+}
+.close:before {
+color: rgba(255, 255, 255, 0.9);
+content: "X";
+text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+font-size: 12px;
+}
+.close:hover {
+background-color: rgba(252, 20, 0, 0.8);
+/* крутим кнопку при наведении */
+-webkit-transform: rotate(360deg);
+-moz-transform: rotate(360deg);
+-ms-transform: rotate(360deg);
+-o-transform: rotate(360deg);
+transform: rotate(360deg);
+}
+
+
+.price_text {margin-top:10px;
+            display: inline-block;
+            margin-left:240px;
+            font-family: "CENTURY GOTHIC", sans-serif;
+            font-size: 1.8em;
+}
+
+
+/*Запись на приём*/
+.appointment{margin-left:248px;
+            border: none;
+            margin-top:50px;
+            background:#FFFFFF;
+            width: 220px;
+            height: 220px;
+}
+
+.appointment_text {margin-top:20px;
+                   display: inline-block;
+                   margin-left:220px;
+                   font-size: 1.8em;
+                   font-family: "CENTURY GOTHIC", sans-serif;
+}
+
+
+/*doctor - информация о врачах*/
+.doctor {width: 220px;
+         height: 220px;
+         margin-left: 150px;
+         border: none;
+         margin-top:20px;
+         background:#FFFFFF;
+}
+
+#doctor {
+    margin-left: 150px;
+    border: none;
+    margin-top: 20px;
+    width: 1010px;
+    height: 610px;
+    text-align: center;
+    padding: 25px;
+    border: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    display: block;
+    position: fixed;
+    top: -9999px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: #20B2AA;
+    opacity: 1,2;
+    line-height: 1.2;
+    font-size: 15pt;
+    overflow-y: scroll;
+    overflow-x:hidden;
+  }
+#doctor::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f9f9fd;
+}
+#doctor::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #A9A9A9;
+}
+#doctor::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background-color: #f9f9fd;
+}
+
+#doctor:target {display: block;
+transition: .5s all;
+top: 0;
+box-shadow: 0 0 0 5000px rgba(128, 128, 128, 0.5);
+
+}
+
+
+.doctor_text{margin-top:10px;
+            display: inline-block;
+            margin-left:170px;
+            font-size: 1.8em;
+            font-family: "CENTURY GOTHIC", sans-serif;
+}
+
+/* Информация для записи к врачу */
+#admission_information {
+    margin-left:150px;
+    border: none;
+    margin-top: 20px;
+    width: 510px;
+    height: 610px;
+    text-align: left;
+    padding: 25px;
+    border: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    display: block;
+    position: fixed;
+    top: -9999px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: #20B2AA;
+    opacity: 1,2;
+    line-height: 1.2;
+    font-size: 15pt;
+    overflow-y: scroll;
+    overflow-x:hidden;
+    font-family: CENTURY GOTHIC, sans-serif;
+  }
+#admission_information::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f9f9fd;
+}
+#admission_information::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #A9A9A9;
+}
+#admission_information::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background-color: #f9f9fd;
+}
+
+#admission_information:target {display: block;
+transition: .5s all;
+top: 0;
+box-shadow: 0 0 0 5000px rgba(128, 128, 128, 0.5);
+
+}
+
+.schedule {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+
+}
+
+.time {
+    width:200px;
+    text-align: right;
+}
+
+
+/*- Корзина - */
+.icon_basket{
+ position: relative;
+ float:left;
+ overflow: hidden;
+ transition: all 0.2s linear;
+ display: block;
+ margin: 3px;
+}
+.icon_basket:hover{
+ transform: scale(1.05);
+}
+.icon_basket:hover .a-btn-symbol{
+ opacity: 0.5;
+ transform: rotate(360deg);
+}
+.icon_basket:active{
+ transform: scale(1.1);
+}
+
+/* Количество товара в корзине */
+.quantity_basket {
+    display: block;
+    width: 10px;
+    height: 14px;
+    text-align: center;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 20px;
+    color: #000000;
+    font-size:9px;
+
+    }
+
+/*- Информация о враче (текст) - */
+.text{margin-left: 20px;
+      line-height: 1.3;
+      margin-right: 10px;
+      margin-left: 400px;
+      margin-bottom:5px;
+      font-family:CENTURY GOTHIC, sans-serif;
+
+}
+/*- Информация о враче (фото слайд)- */
+.container_slider_css {
+  margin: 0px left;
+  width: 370px;
+  height: 550px;
+  overflow: hidden;
+  position: absolute;
+
+}
+
+/*Фото в информации о враче */
+.photo_slider_css {
+  position: absolute;
+  animation: round 8s infinite;
+  opacity: 0;
+  border: 1px solid #20B2AA;
+  border-radius: 20px;
+  right: 10%;
+  width: 310px;
+  height: 450px;
+}
+
+@keyframes round {
+  25% {
+    opacity: 5;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+img:nth-child(1) {
+  animation-delay: 2s;
+}
+
+img:nth-child(2) {
+  animation-delay: 7s;
+}
+
+/* Акссесуары глаза */
+.eye_accessories {
+    display: inline-block;
+    margin-left: 150px;
+    border: none;
+    background:#FFFFFF;
+}
+
+.eye_accessories_img {
+    width: 220px;
+    height: 220px;
+}
+
+.eye_accessories_text {
+    margin-top: 0px;
+    display: inline-block;
+    margin-left: 150px;
+    font-size: 1.8em;
+    font-family: "CENTURY GOTHIC", sans-serif;
+}
+
+
+/* Отзывы */
+.review {
+    display: inline-block;
+    margin-left: 220px;
+    border: none;
+    background:#FFFFFF
+}
+
+.review_img {
+    display: inline-block;
+    width: 220px;
+    height: 220px;
+}
+
+.review_text {
+    display: inline-block;
+    margin-left: 195px;
+    font-size: 1.8em;
+    font-family: "CENTURY GOTHIC", sans-serif;
+}
+
+/* Новости для вас */
+
+.news {
+    display: inline-block;
+    margin-left: 560px;
+    border: none;
+    background:#FFFFFF;
+}
+
+.news_img {
+    width: 220px;
+    height: 220px;
+    margin-top: -230px;
+    margin-left: 500px;
+
+}
+
+.news_text {
+    margin-top: 0px;
+    display: inline-block;
+    margin-left: 300px;
+    font-size: 1.8em;
+    font-family: "CENTURY GOTHIC", sans-serif;
+}
+
+@media(min-width:0px) and (max-width:320px) {
+    /* совсем маленькие экраны андроидов */
+    .container_slider_css{
+          width: 80%;
+          height: 190px;
+    }
+}
+
+@media(min-width:321px) and (max-width:480px) {
+    /* популярные разрешения смартфонов уже более позднего поколения андроид */
+    .container_slider_css{
+          width: 80%;
+          height: 190px;
+     }
+}
+
+
+
+@media (max-width: 992px) {
+    .d-flex {
+        max-width: 992x;
+        height: 150px;
+    }
+    /*Глазок*/
+    .name {
+        white-space: pre;
+        font-size: 19px;
+        margin-left:30px;
+        }
+
+    /* О нас */
+    .about_us {
+    white-space: pre;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 0px;
+    margin-top: 50px;
+    margin-left: -360px;
+    }
+
+    /* Авторизация */
+
+    .authorization {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-right: 0px;
+    }
+
+
+    /*корзина*/
+    .icon_basket{
+    position: absolute;
+    margin-left: 370px;
+    margin-top: 40px;
+    }
+
+    /*поиск*/
+    .search{
+    margin-top: 110px;
+    left: 0px;
+    height: 20px;
+    left: 47%;
+    }
+
+    .input_search {
+        width: 100%;;
+        height: 10px;
+        left: -15px;
+        font-size: 0.3em;
+    }
+
+    .fa {
+        height: 29px;
+        font-size: 0.9em;
+        padding: 3px;
+        transition: all 0.1s;
+    }
+
+    .search:hover .fa{
+        background: #20B2AA;
+        color: #000000;
+        }
+
+    .button {margin-left:0px;
+
+        }
+
+      /*Приём ведёт */
+     .doctor {width: 150px;
+        height: 150px;
+        margin-left: 0px;
+        }
+
+     .doctor_text{margin-top: -350px;
+        margin-left: 33px;
+        font-size: 0.8em;
+    }
+
+    #doctor {
+        width: 450px;
+        height: 550px;
+        font-size: 9pt;
+        margin-top: 90px;
+    }
+
+    /*- Информация о враче (текст) - */
+    .text{margin-left: 5px;
+          line-height: 1.6;
+          margin-right: 0px;
+          margin-bottom: 5px;
+
+    }
+
+    .container_slider_css {
+      width: 370px;
+      height: 650px;
+    }
+
+    /* Фото в информации о враче */
+    .photo_slider_css {
+      margin-top: 450px;
+      animation: round 8s infinite;
+      right: 30%;
+      width: 150px;
+      height: 170px;
+    }
+
+    /*цены на услуги */
+    .price{
+        margin-left:-10px;
+        margin-top: 15px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .price_text {margin-top: -350px;
+            margin-left: 47px;
+            font-size: 0.8em;
+    }
+
+    /*Цены на услуги */
+    #price {
+    max-width: 450px;
+    min-height: 210px;
+    max-height: 610px;
+    padding: 5px;
+    opacity: 1,2;
+    line-height: 1.6;
+    font-size: 9pt;
+    }
+
+
+
+      /* формируем кнопку закрытия */
+    .close {
+    line-height: 13px;
+    }
+
+    /*Запись на приём*/
+    .appointment{margin-left:310px;
+        margin-top:-170px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .appointment_text {margin-top: -370px;
+            margin-left: 40px;
+            font-size: 0.8em;
+    }
+
+    /*Аксессуары глаза*/
+    .eye_accessories {
+    margin-left: 0px;
+    margin-top: 0px;
+
+    }
+
+    .eye_accessories_img {
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    }
+
+    .eye_accessories_text {
+    margin-top: 0px;
+    margin-left: 20px;
+    font-size: 0.8em;
+    }
+
+    /*Оставить отзыв*/
+    .review {
+    margin-left: 0px;
+    margin-top: 0px;
+
+    }
+
+    .review_img {
+    width: 150px;
+    height: 150px;
+    }
+
+    .review_text {
+    margin-top: 0px;
+    margin-left: 50px;
+    font-size: 0.8em;
+    }
+
+    /*Новости*/
+    .news {
+    margin-left: 305px;
+    margin-top: 0px;
+    }
+
+    .news_img {
+    width: 150px;
+    height: 150px;
+    margin-top: -180px;
+    margin-left: 0px;
+
+    }
+
+    .news_text {
+    margin-top: 5px;
+    margin-left: 73px;
+    font-size: 0.8em;
+    }
+
+    #admission_information {
+    margin-top: 90px;
+    width: 410px;
+    height: 500px;
+    opacity: 1.9;
+    line-height: 1.0;
+    font-size: 12pt;
+
+  }
+
+    #Information{
+    bottom: 0em;
+    right: 5em;
+    text-align: center;
+    margin-top: 0%;
+    font-size: 9px
+    }
+
+    }

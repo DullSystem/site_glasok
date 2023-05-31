@@ -1,0 +1,388 @@
+body{background: #FFFFFF;
+    color: #000000;
+    background-size: 100%;
+    background-attachment: fixed;
+    }
+
+    #Information{position: relative;
+    bottom: -27em;
+    text-align: center;
+    top:470%;
+    font-size: 12px;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+    /* Глазок */
+.d-flex {
+    height: 55px;
+    font-size: 27px;
+    text-decoration: none;
+
+    font-family: "CENTURY GOTHIC", sans-serif;
+}
+
+.name {
+    color:#FFFFFF;
+    margin-left:70px;
+    white-space: pre;
+}
+
+
+    /* О нас */
+.about_us {
+    white-space: pre;
+    margin-right:17px;
+    margin-top:13px;
+    margin-left: 380px;
+    color:#FFFFFF;
+    font:menu;
+    font-size: 17px;
+    text-decoration: none;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+.about_us:hover {
+    color:#FFFFFF;
+}
+
+    /*Авторизация*/
+.authorization {
+    white-space: pre;
+    margin-right:17px;
+    margin-top:13px;
+    font:menu;
+    font-size: 17px;
+    color:#FFFFFF;
+    text-decoration: none;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+.authorization:hover {
+    color:#FFFFFF;
+}
+
+    /*Ссылка на главную страницу*/
+.home {
+    white-space: pre;
+    margin-right:17px;
+    margin-top:13px;
+    font:menu;
+    font-size: 17px;
+    color:#FFFFFF;
+    text-decoration: none;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+.home:hover {
+    color:#FFFFFF;
+}
+
+
+/*- Поиск - */
+.search{
+    position: absolute;
+    top: 0;
+    left: 800px;
+    transform: translate(-30%,-30%);
+    transition: all 1s;
+    width: 30px;
+    height: 50px;
+    background: #20B2AA;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid #20B2AA;
+    padding: 0px;
+    margin-top:1.1%
+
+}
+
+.input_search{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 35px;
+    line-height: 75px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 0.6em;
+    border-radius: 20px;
+    padding:  10px;
+
+}
+
+.fa{
+    box-sizing: border-box;
+    padding: 7px;
+    width: 30px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.0em;
+    transition: all 1s;
+
+}
+
+.search:hover{
+    width: 200px;
+    cursor: pointer;
+
+}
+
+.search:hover input{
+    display: block;
+
+}
+
+.search:hover .fa{
+    background: #20B2AA;
+    color: #000000;
+
+
+}
+
+.icon_basket{
+ position: relative;
+ float:left;
+ overflow: hidden;
+ transition: all 0.2s linear;
+ display: block;
+ margin: 3px;
+}
+.icon_basket:hover{
+ transform: scale(1.05);
+}
+.icon_basket:hover .a-btn-symbol{
+ opacity: 0.5;
+ transform: rotate(360deg);
+}
+.icon_basket:active{
+ transform: scale(1.1);
+}
+
+/* Количество товара */
+.quantity_basket {
+    display: block;
+    width: 10px;
+    height: 14px;
+    text-align: center;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 20px;
+    color: #000000;
+    font-size:9px;
+    }
+/*Блок найденных товаров*/
+
+
+.block {
+    margin-left: 10px;
+
+}
+
+.product_link {
+ text-decoration: none;
+ color: #000000;
+}
+
+a:hover {
+color: #000000;
+}
+
+.search_product {
+    width: 420px;
+    height: 200px;
+    margin-left:60px;
+    margin-top: 10px;
+    box-shadow: 7px 7px 5px rgba(0,0,0,0.3);
+    list-style-type: none;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 35px;
+
+    font-family: "CENTURY GOTHIC", sans-serif;
+}
+
+
+.name_product{
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color:#000000;
+}
+
+.information_product {
+    position: absolute;
+    width: 220px;
+    margin-left:180px;
+    font-size: 12px;
+    text-align: right;
+}
+
+
+
+
+.image_product {
+width: 160px;
+height: 100px;
+}
+
+.mybutton{
+background: #20B2AA;
+color: #FFFFFF;
+border: 1px #20B2AA solid;
+border-radius: 5px;
+}
+
+
+
+.mybutton:hover{
+ transform: scale(1.05);
+}
+.mybutton:hover .a-btn-symbol{
+ opacity: 0.5;
+ transform: rotate(360deg);
+}
+.mybutton:active{
+ transform: scale(1.1);
+}
+
+
+.image_product:hover{
+ transform: scale(1.05);
+}
+.image_product:hover .a-btn-symbol{
+ opacity: 0.5;
+ transform: rotate(360deg);
+}
+.image_product:active{
+ transform: scale(1.1);
+}
+
+
+
+
+
+
+/*- Адаптируем под мобильные устройства - */
+@media (max-width: 800px) {
+    .d-flex {
+        max-width: 992x;
+        height: 150px;
+    }
+    /*Глазок*/
+    .name {
+        white-space: pre;
+        font-size: 19px;
+        margin-left:30px;
+        }
+
+    /* О нас */
+    .about_us {
+    white-space: pre;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 0px;
+    margin-top: 50px;
+    margin-left: -390px;
+    }
+
+    /* Ссылка на главную страницу */
+    .home {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 0px;
+    }
+
+    /* Авторизация */
+
+    .authorization {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-right: 0px;
+    }
+
+
+    /*корзина*/
+    .icon_basket{
+    position: absolute;
+    margin-left: 370px;
+    margin-top: 97px;
+    }
+
+    /*поиск*/
+    .search{
+    margin-top: 110px;
+    left: 0px;
+    height: 20px;
+    left: 20%;
+    }
+
+    .input_search {
+        width: 100%;;
+        height: 10px;
+        left: -15px;
+        font-size: 0.3em;
+    }
+
+    .fa {
+        height: 29px;
+        font-size: 0.9em;
+        padding: 3px;
+        transition: all 0.1s;
+    }
+
+    .search:hover .fa{
+        background: #20B2AA;
+        color: #000000;
+        }
+
+    .block {
+    margin-left: -30px;
+
+    }
+
+
+    .search_product {
+    width: 420px;
+    height: 190px;
+    margin-left:60px;
+    margin-top: 20px;
+    box-shadow: 7px 7px 5px rgba(0,0,0,0.3);
+    list-style-type: none;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 5px;
+    }
+
+    .name_product{
+    font-size: 14px;
+    }
+
+    .information_product {
+    margin-left: 180px;
+    font-size: 12px;
+    text-align: right;
+    }
+
+
+    .image_product {
+    width: 160px;
+    height: 100px;
+
+    }
+
+    #Information{position: relative;
+    font-size: 9px;
+    }
+
+}

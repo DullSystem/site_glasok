@@ -1,0 +1,358 @@
+body{background: #FFFFFF;
+    color: #000000;
+    background-size: 100%;
+    background-attachment: fixed;
+    }
+    #Information{position: relative;
+    bottom: 0em;
+    text-align: center;
+    top:270%;
+    font-size: 12px;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+    /* Глазок */
+.d-flex {
+    height: 55px;
+    font-size: 27px;
+    text-decoration: none;
+
+    font-family: "CENTURY GOTHIC", sans-serif;
+}
+
+.name {
+    color:#FFFFFF;
+    margin-left:70px;
+    white-space: pre;
+}
+
+
+
+
+    /*Авторизация*/
+.authorization {
+    white-space: pre;
+    margin-right:17px;
+    margin-top:13px;
+    margin-left: 445px;
+    font:menu;
+    font-size: 17px;
+    color:#FFFFFF;
+    text-decoration: none;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+.authorization:hover {
+    color:#FFFFFF;
+}
+
+    /*Ссылка на главную страницу*/
+.home {
+    white-space: pre;
+    margin-right:17px;
+    margin-top:13px;
+    font:menu;
+    font-size: 17px;
+    color:#FFFFFF;
+    text-decoration: none;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+.home:hover {
+    color:#FFFFFF;
+}
+
+
+/*- Поиск - */
+.search{
+    position: absolute;
+    top: 0;
+    left: 800px;
+    transform: translate(-30%,-30%);
+    transition: all 1s;
+    width: 30px;
+    height: 50px;
+    background: #20B2AA;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid #20B2AA;
+    padding: 0px;
+    margin-top:1.1%
+
+}
+
+.input_search{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 35px;
+    line-height: 75px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 0.6em;
+    border-radius: 20px;
+    padding:  10px;
+
+}
+
+.fa{
+    box-sizing: border-box;
+    padding: 7px;
+    width: 30px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.0em;
+    transition: all 1s;
+
+}
+
+.search:hover{
+    width: 200px;
+    cursor: pointer;
+
+}
+
+.search:hover input{
+    display: block;
+
+}
+
+.search:hover .fa{
+    background: #20B2AA;
+    color: #000000;
+
+
+}
+
+
+
+
+/*- Корзина - */
+.icon_basket{
+ position: relative;
+ float:left;
+ overflow: hidden;
+ transition: all 0.2s linear;
+ display: block;
+ margin: 3px;
+}
+.icon_basket:hover{
+ transform: scale(1.05);
+}
+.icon_basket:hover .a-btn-symbol{
+ opacity: 0.5;
+ transform: rotate(360deg);
+}
+.icon_basket:active{
+ transform: scale(1.1);
+}
+
+/* Количество товара в магазине */
+.quantity_basket {
+    display: block;
+    width: 10px;
+    height: 14px;
+    text-align: center;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 20px;
+    color: #000000;
+    font-size: 9px;
+    }
+
+/* Текст и картинки */
+.text_name {
+    margin-left: 390px;
+    font-size: 35px;
+
+
+}
+
+.glas{
+    width:100px;
+    height:50px;
+
+}
+
+.block {
+    margin-left: 110px;
+    width: 1320px;
+    display: inline-block;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 1.7;
+    }
+
+.equipment {
+    display: inline-block;
+    margin-left: 20px;
+    width:310px;
+    height:310px;
+    margin: 5px;
+    transition: 1s;
+    cursor: pointer;
+    }
+
+
+.equipment:hover {
+    transform: scale(1.3);
+    }
+
+
+.lizenzia {
+    margin-top: 50px;
+    margin-left: 170px;
+    width:390px;
+    height:400px;
+    cursor:pointer;
+    border-radius: 25px;
+    transition: 1s;
+}
+
+
+.lizenzia:hover {
+    transform: scale(1.2);
+    }
+
+
+
+h2 {
+    text-align: center;
+}
+
+
+
+/*- Адаптируем под мобильные устройства - */
+
+@media (max-width: 992px) {
+    .d-flex {
+        max-width: 992x;
+        height: 150px;
+    }
+    /*Глазок*/
+    .name {
+        white-space: pre;
+        font-size: 19px;
+        margin-left:30px;
+        }
+
+
+    /* Авторизация */
+
+    .authorization {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: -360px;
+    margin-right: 70px;
+    }
+
+    /* Ссылка на главную страницу */
+    .home {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 0px;
+    }
+
+    .icon_basket{
+    position: absolute;
+    margin-left: 360px;
+    margin-top: 100px;
+    }
+
+    /*поиск*/
+    .search{
+    margin-top: 110px;
+    left: 0px;
+    height: 20px;
+    left: 23%;
+    }
+
+    .input_search {
+        width: 100%;;
+        height: 10px;
+        left: -15px;
+        font-size: 0.3em;
+    }
+
+    .fa {
+        height: 29px;
+        font-size: 0.9em;
+        padding: 3px;
+        transition: all 0.1s;
+    }
+
+    .search:hover .fa{
+        background: #20B2AA;
+        color: #000000;
+        }
+
+    /* Текст и картинки */
+    .text_name {
+        margin-left: 70px;
+        margin-top: 20px;
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    .glas{
+        width:60px;
+        height:30px;
+    }
+
+    .block {
+        margin-left: 10px;
+        width: 445px;
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .equipment {
+
+        display: inline-block;
+        margin-left: 20px;
+        width: 98px;
+        height: 98px;
+        margin: 5px;
+        transition: 1s;
+    }
+
+
+
+
+
+    .lizenzia {
+        margin-top: 50px;
+        margin-left: 70px;
+        width:109px;
+        height:109px;
+        border-radius: 0px;
+        transition: 0s;
+    }
+
+    .lizenzia:hover {
+        transform: none;
+    }
+
+    .lizenzia:focus {width:280px;
+                    height:280px;}
+
+    #Information{position: relative;
+    bottom: 3em;
+    right: 0em;
+    text-align: center;
+    top:200%;
+    font-size: 7px
+
+    }
+
+}

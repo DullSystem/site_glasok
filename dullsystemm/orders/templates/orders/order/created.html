@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <title>{% block "ГлазОК" %}Благодарим за заказ!"{% endblock %}</title>
+</head>
+<body>
+
+{% block content %}
+    <h1>Спасибо за заказ!</h1>
+    <p>Ваш заказ был успешно выполнен. Ваш номер заказа
+        <strong><b>{{ order.id }}</b></strong>.</p>
+{% endblock %}
+</body>
+</html>

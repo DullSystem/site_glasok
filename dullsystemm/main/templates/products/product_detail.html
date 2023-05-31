@@ -1,0 +1,306 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block "ГлазОК" %}"Контактные линзы"{% endblock %}</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'main/css/product_detail.css' %}" >
+
+</head>
+<body>
+<script>
+function TFun(){
+      document.getElementById('star-1').value;
+  }</script>
+
+<script>function TFun1(){
+    alert(document.getElementById('star-2').value);
+  }
+</script>
+<script>function TFun2(){
+    alert(document.getElementById('star-3').value);
+  }
+</script>
+<script>function TFun3(){
+    alert(document.getElementById('star-4').value);
+  }
+</script>
+<script>function TFun4(){
+    alert(document.getElementById('star-5').value);
+  }
+
+
+</script>
+<!--Шапка сайта, поиск, название-->
+{% block content %}
+ <div class="d-flex " style="background: #20B2AA">
+      <a href="/" class="d-flex  ">
+       <span class="name">Офтальмологический кабинет "ГлазОК"</span>
+      </a>
+      <a class="about_us"  href="{% url 'about_us' %}">О нас</a>
+
+<!--          Если пользователь авторизован то будет отображен логин-->
+          {% if request.user.is_authenticated %}
+          <a class="authorization" href="{% url 'logout' %}">{{user.username}}(Выйти)</a>
+          {% else %}
+            <a class="authorization" href="{% url 'login' %}">Авторизация на сайте</a>
+          {% endif %}
+          <a class="home" href="/">Главная страница</a>
+
+          <a href="{% url 'cart:cart_detail' %}" class="icon_basket">
+
+              <div class="quantity_basket">
+                  {% with total_items=cart|length %}
+                {% if cart|length > 0 %}
+                  <b>{{ total_items }}</b>
+                {% endif %}
+                  {% endwith %}</div>
+
+              <svg width="32" height="30"  style="margin-right:17px;margin-top:3px; background-color: #FFFFFF;border-radius: 20px;" viewBox="-9 0 45 33" fill="#FFFFFF" >
+              <path d="M5.92857 13.1829L6.92857 5.04025C6.92857 3.24143 8.39964 1.7832 10.2143 1.7832H14.7857C16.6004 1.7832 18.0714 3.24143 18.0714 5.04025L19.0714 13.1829M2 8.29729L1 26.7539C1 28.5527 2.47106 30.0109 4.28571 30.0109H20.7143C22.5289 30.0109 24 28.5527 24 26.7539L23 8.29729H2Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+          <!--        Поиск по сайту-->
+          <form action="{% url 'search' %}" method="get" class="search">
+                  <input type="search" name="q" class="input_search" placeholder="Поиск по аксессуарам глаза">
+                  <i class="fa fa-search"></i>
+                </form>
+
+
+      </div>
+
+
+
+
+<!--Блок с товаром, характеристиками и корзиной-->
+
+    <div class="block">
+
+        <div class="product_name"><b>{{product.name}}</b></div>
+
+    <!--            Описание товара, характеристики-->
+                <div class="description"><p class="description_name"><b>Описание {{product.name}}:</b></p>
+                    <p><u>Цена за 1шт, при покупке упаковки скидка 10%.</u></p>
+                    <p class="description_text">{{product.description| safe}}</p>
+
+                    <div id = "Information" style="font-family: CENTURY GOTHIC, sans-serif;">
+                    "ГлазОК" Тверская область, город Торжок, ул. Металлистов, д.1"Д" ОГРН:00000000000</div>
+                </div>
+
+
+
+
+{% if product.group == 'lenses' %}
+<form class="select" method="post" action="{% url 'cart:cart_add' product.id %}"  >
+        <!--        Колличество упаковок товара-->
+       <div class="submenu-link">
+
+        <select  name="quantity"  class="submenu">
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+              <option value='4'>4</option>
+            <option value='5'>5</option>
+            <option value='6'>6</option>
+          </select>
+       </div>
+
+<!--        Оптическая сила товара-->
+
+        <div class="submenu-link1">
+
+        <select name="size" class="submenu">
+            <option  value='-0.75'>-0.75</option>
+            <option value='-1.00'>-1.00</option>
+            <option value='-1.50'>-1.50</option>
+              <option value='-2.00'>-2.00</option>
+            <option value='-2.50'>-2.50</option>
+            <option value='-3.00'>-3.00</option>
+            <option  value='-3.25'>-3.25</option>
+            <option value='-3.50'>-3.50</option>
+            <option value='-4.00'>-4.00</option>
+              <option value='-4.50'>-4.50</option>
+            <option value='-5.00'>-5.00</option>
+            <option value='-5.50'>-5.50</option>
+            <option value='-6.50'>-6.50</option>
+            <option value='-7.00'>-7.00</option>
+          </select>
+           </div>
+
+
+
+<!--{{ cart_product_form.as_p }}-->
+{% csrf_token %}
+<input type="submit" value="В корзину" class="btn-default" >
+</form>
+<div class="characteristics" >Количество:<br>Базовая кривизна:<br>Оптическая сила:</div>
+
+    <!--            радиус кривизны товара-->
+<div class="curvature"><b>{{product.radius}}</b></div>
+    <!--            цена товара-->
+            <div class="price">{% ifchanged %}{{product.price}} ₽/ 1ШТ{% endifchanged %}</div>
+
+{% elif product.group == 'glasses'%}
+        <form class="select" method="post" action="{% url 'cart:cart_add' product.id %}"  >
+        <!--        Колличество упаковок товара-->
+       <div class="submenu-link">
+
+        <select  name="quantity"  class="submenu">
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+              <option value='4'>4</option>
+            <option value='5'>5</option>
+            <option value='6'>6</option>
+          </select>
+       </div>
+
+<!--        Оптическая сила товара-->
+
+        <div class="submenu-link1">
+
+        <select name="size" class="submenu" id="theSelect">
+            <option  value='-0.75'>-0.75</option>
+            <option value='-1.00'>-1.00</option>
+            <option value='-1.50'>-1.50</option>
+            <option value='-2.00'>-2.00</option>
+            <option value='-2.50'>-2.50</option>
+            <option value='-3.00'>-3.00</option>
+            <option  value='-3.25'>-3.25</option>
+            <option value='-3.50'>-3.50</option>
+            <option value='-4.00'>-4.00</option>
+            <option value='-4.50'>-4.50</option>
+            <option value='-5.00'>-5.00</option>
+            <option value='-5.50'>-5.50</option>
+            <option value='-6.50'>-6.50</option>
+            <option value='-7.00'>-7.00</option>
+            <option  value='+0.75'>+0.75</option>
+            <option value='+1.00'>+1.00</option>
+            <option value='+1.50'>+1.50</option>
+            <option value='+2.00'>+2.00</option>
+            <option value='+2.25'>+2.25</option>
+            <option value='+2.50'>+2.50</option>
+            <option value='+3.00'>+3.00</option>
+            <option  value='+3.25'>+3.25</option>
+            <option value='+3.50'>+3.50</option>
+            <option value='+4.00'>+4.00</option>
+            <option value='+4.50'>+4.50</option>
+            <option value='+5.00'>+5.00</option>
+            <option value='+5.50'>+5.50</option>
+            <option value='+6.50'>+6.50</option>
+            <option value='+7.00'>+7.00</option>
+          </select>
+           </div>
+
+
+
+<!--{{ cart_product_form.as_p }}-->
+{% csrf_token %}
+<input type="submit" value="В корзину" class="btn-default" >
+</form>
+        <div class="characteristics" >Количество:<br><p style="display: none;">Базовая кривизна:</p><br>Оптическая сила:</div>
+
+    <!--            цена товара-->
+            <div class="price">{% ifchanged %}{{product.price}} ₽/ 1ШТ{% endifchanged %}</div>
+{% elif product.group != 'lenses'%}
+<form class="select" method="post" action="{% url 'cart:cart_add' product.id %}"  >
+        <!--        Колличество упаковок товара-->
+       <div class="submenu-link">
+
+        <select  name="quantity"  class="submenu"  >
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+              <option value='4'>4</option>
+            <option value='5'>5</option>
+            <option value='6'>6</option>
+          </select>
+       </div>
+
+    <div  style="display: none; position: absolute;">
+
+        <select name="size" class="submenu">
+            <option  value='-0.75'>-</option>
+          </select>
+           </div>
+<div class="characteristics" >Количество:</div>
+    <div class="price">{{product.price}} ₽/ 1ШТ</div>
+
+    {% csrf_token %}
+<input type="submit" value="В корзину" class="btn-default" >
+</form>
+    {% endif %}
+
+<div class="rating-area">
+
+	<input type="radio" id="star-5" name="rating" value="Вы поставили 5 звёзд, благодарим вас!" onclick="TFun4()" >
+	<label  for="star-5" title="Оценка «5»" ></label>
+	<input type="radio" id="star-4" name="rating" value="Вы поставили 4 звезды, благодарим вас! " onclick="TFun3()" >
+	<label for="star-4" title="Оценка «4»"></label>
+	<input type="radio" id="star-3" name="rating" value="Вы поставили 3 звезды, будем рады улучшить качество товара!" onclick="TFun2()" >
+	<label for="star-3" title="Оценка «3»"></label>
+	<input type="radio" id="star-2" name="rating" value="Вы поставили 2 звезды, будем рады улучшить качество товара!" onclick="TFun1()" >
+	<label for="star-2" title="Оценка «2»"></label>
+	<input type="radio" id="star-1" name="rating" value="Вы поставили 1 звезду, надеемся в следующий раз мы исправим качество товара!" onclick="TFun()" >
+	<label for="star-1" title="Оценка «1»"></label>
+
+</div>
+
+<div class="rating-result">Средняя оценка клиентов:
+	<span class="active"></span>
+	<span class="active"></span>
+	<span class="active"></span>
+	<span class="active"></span>
+    <span class="active"></span>
+
+</div>
+</div>
+<!--    Изображение товара, перелистование-->
+<div class="adaptivny-slayder" >
+                  <input type="radio" name="kadoves" id="slaid1" checked>
+                  <input type="radio" name="kadoves" id="slaid2">
+
+
+                  <div class="kadoves">
+                  <label for="slaid1"></label>
+                  <label for="slaid2"></label>
+
+                  </div>
+
+                  <div class="adaptivny-slayder-lasekun">
+                  <div class="abusteku-deagulus">
+
+                  <img class="image_product" title=""  src="{{ product.image.url }}"   alt="Изображение №1"  />
+                    <img class="image_product1" title=""  src="{{ product.image1.url }}"   alt="Изображение №2"  />
+
+                  </div>
+                </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
+</body>
+</html>

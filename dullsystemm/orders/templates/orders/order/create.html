@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block "ГлазОК" %}Проверка заказа{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'orders/css/create.css' %}" >
+
+</head>
+<body>
+{% block title %}
+<div class="d-flex " style="background: #20B2AA">
+      <a href="/" class="d-flex  ">
+       <span class="name">Офтальмологический кабинет "ГлазОК"</span>
+      </a>
+      <a class="about_us"  href="{% url 'about_us' %}">О нас</a>
+
+<!--          Если пользователь авторизован то будет отображен логин-->
+          {% if request.user.is_authenticated %}
+          <a class="authorization" href="{% url 'logout' %}">{{user.username}}(Выйти)</a>
+          {% else %}
+            <a class="authorization" href="{% url 'login' %}">Авторизация на сайте</a>
+          {% endif %}
+          <a class="home" href="/">Главная страница</a>
+          <a href="{% url 'cart:cart_detail' %}" class="icon_basket">
+
+              <div class="quantity_basket">
+                  {% with total_items=cart|length %}
+                {% if cart|length > 0 %}
+                  <b>{{ total_items }}</b>
+                {% endif %}
+                  {% endwith %}</div>
+
+              <svg width="32" height="30"  style="margin-right:17px;margin-top:3px; background-color: #FFFFFF;border-radius: 20px;" viewBox="-9 0 45 33" fill="#FFFFFF" >
+              <path d="M5.92857 13.1829L6.92857 5.04025C6.92857 3.24143 8.39964 1.7832 10.2143 1.7832H14.7857C16.6004
+              1.7832 18.0714 3.24143 18.0714 5.04025L19.0714 13.1829M2 8.29729L1 26.7539C1 28.5527 2.47106 30.0109
+              4.28571 30.0109H20.7143C22.5289 30.0109 24 28.5527 24 26.7539L23 8.29729H2Z"
+                    stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+              <form action="{% url 'search' %}" method="get" class="search">
+                  <input type="search" name="q" class="input_search" placeholder="Поиск по аксессуарам глаза">
+                  <i class="fa fa-search"></i>
+                </form>
+
+    </div>
+
+
+{% endblock %}
+{% block content %}
+
+        <form action="." method="post" class="order-form" id="myform">
+
+        <p>
+                    <input type="text" class="form_input" placeholder="Имя" name="first_name" value="" id="name">
+                    <div style="font-size: 9pt;color:#FF0000" class="form-error">{{ form.name.errors}}</div>
+        <p>
+                    <input type="text" class="form_input" placeholder="Фамилия" name="last_name" value="" id="last_name">
+                </p>
+            <div style="font-size: 9pt;color:#FF0000" class="form-error">{{ form.last_name.errors}}</div>
+
+         <p>
+                    <input type="text" class="form_input" placeholder="Email" name="email" value="" id="email">
+                </p>
+                    <div style="font-size: 9pt;color:#FF0000" class="form-error">{{ form.email.errors}}</div>
+
+        <p>
+                    <input type="text" class="form_input" placeholder="Адрес" name="address" value="" id="address">
+                </p>
+                    <div style="font-size: 9pt;color:#FF0000" class="form-error">{{ form.address.errors}}</div>
+
+        <p>
+                    <input type="text" class="form_input" placeholder="Почтовый" name="postal_code" value="" id="postal_code">
+                </p>
+                    <div style="font-size: 9pt;color:#FF0000" class="form-error">{{ form.postal_code.errors}}</div>
+        <p>
+                    <input type="text" class="form_input" placeholder="Город" name="city" value="" id="city">
+                </p>
+                    <div style="font-size: 9pt;color:#FF0000" class="form-error">{{ form.city.errors}}</div>
+
+
+<!--            {{ form.as_p }}-->
+        <input class="place_an_order" type="submit" value="Разместить заказ" form="myform">
+        {% csrf_token %}
+    </form>
+<div class="order_verification"><b>Давайте проверим ваш заказ:</b></div>
+    <div class="order-info">
+        <div class="your_order">Ваш заказ:</div>
+
+            {% for item in cart %}
+                    {% if item.product.group == 'lenses' %}
+                        <div class="block_product">
+                            <p class="text_product">Количество: {{ item.quantity }}шт <br> Наименование товара: {{ item.product.name }}<br>
+                                Оптическая сила: {{ item.size }}<br>  базовая кривизна: {{ item.product.radius }}</p>
+                            <img class="img_product"  src=" {{ item.product.image.url }}">
+                            <span class="sum_product">На сумму: {{ item.total_price }} ₽</span>
+                        </div>
+
+                     {% elif item.product.group == 'glasses' %}
+                        <div class="block_product">
+                            <p class="text_product">Количество: {{ item.quantity }}шт <br> Наименование товара: {{ item.product.name }}<br>
+                                Оптическая сила: {{ item.size }}</p>
+                            <img class="img_product" src=" {{ item.product.image.url }}">
+                            <span class="sum_product">На сумму: {{ item.total_price }} ₽</span>
+                        </div>
+                    {% elif item.product.group != 'lenses' %}
+                        <div class="block_product">
+                            <p class="text_product">Количество: {{ item.quantity }}шт <br> Наименование товара: {{ item.product.name }}</p>
+                            <img class="img_product" src=" {{ item.product.image.url }}">
+                            <span class="sum_product">На сумму: {{ item.total_price }} ₽</span>
+                        </div>
+                    {% endif %}
+            {% endfor %}
+
+        <div class="sum">Сумма к оплате: {{ cart.get_total_price }} ₽<br>
+            <div id = "Information" style="font-family: CENTURY GOTHIC, sans-serif;">
+    "ГлазОК" Тверская область, город Торжок, ул. Металлистов, д.1"Д"  ОГРН:00000000000</div></div>
+    </div>
+{% endblock %}
+</body>
+</html>

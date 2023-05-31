@@ -1,0 +1,203 @@
+{% load static %}
+<!--{% load main_tags %}-->
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block "ГлазОК" %}"Аксессуары глаза"{% endblock %}</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'main/css/product.css' %}" >
+
+</head>
+<body>
+<div class="d-flex " style="background: #20B2AA">
+      <a href="/" class="d-flex  ">
+       <span class="name">Офтальмологический кабинет "ГлазОК"</span>
+      </a>
+      <a class="about_us"  href="{% url 'about_us' %}">О нас</a>
+
+<!--          Если пользователь авторизован то будет отображен логин-->
+          {% if request.user.is_authenticated %}
+          <a class="authorization" href="{% url 'logout' %}">{{user.username}}(Выйти)</a>
+          {% else %}
+            <a class="authorization" href="{% url 'login' %}">Авторизация на сайте</a>
+          {% endif %}
+          <a class="home" href="/">Главная страница</a>
+          <a href="{% url 'cart:cart_detail' %}" class="icon_basket">
+
+              <div class="quantity_basket">
+                  {% with total_items=cart|length %}
+                {% if cart|length > 0 %}
+                  <b>{{ total_items }}</b>
+                {% endif %}
+                  {% endwith %}</div>
+
+              <svg width="32" height="30"  style="margin-right:17px;margin-top:3px; background-color: #FFFFFF;border-radius: 20px;" viewBox="-9 0 45 33" fill="#FFFFFF" >
+              <path d="M5.92857 13.1829L6.92857 5.04025C6.92857 3.24143 8.39964 1.7832 10.2143 1.7832H14.7857C16.6004
+              1.7832 18.0714 3.24143 18.0714 5.04025L19.0714 13.1829M2 8.29729L1 26.7539C1 28.5527 2.47106 30.0109
+              4.28571 30.0109H20.7143C22.5289 30.0109 24 28.5527 24 26.7539L23 8.29729H2Z"
+                    stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+                integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+              <form action="{% url 'search' %}" method="get" class="search">
+                  <input type="search" name="q" class="input_search" placeholder="Поиск по аксессуарам глаза">
+                  <i class="fa fa-search"></i>
+                </form>
+
+    </div>
+
+
+
+<p class="eye_accessories">Аксеcсуары глаза</p>
+<main>
+    <div class="block_product">
+      <div  class="col">
+
+          <div class="card-header py-3 text-secondary " style="background: #FFFFE0;  ">
+            <h4 class="my-0 fw-normal">Контактные линзы</h4>
+          </div>
+          <div class="card-body" style="background: #20B2AA;  ">
+            <h1 class="card-title pricing-card-title" style="color:#FFFFE0">от 280₽</h1>
+            <ul class="list-unstyled mt-3 mb-4" style="background: #20B2AA ">
+              <li >Двухнедельные</li>
+              <li >Ежемесячные</li>
+              <li >Ежеквартальные</li>
+              <li  >Цветные</li>
+            </ul>
+            <a href="#lenses" class="button" >Категории</a>
+            <a href="#x" class="overlay" id="lenses"></a>
+               <div class="popup">
+                   <h5 style="">Мы предлагаем вам линзы следующих фирм:</h5><br>
+
+                   <div class = "block">
+                       {% for p in product %}
+                       {% if p.group == 'lenses' %}
+                       <a href="{% url 'product_detail' id=p.id url_slug=p.url_slug %}"  class="Link" ><p class="text_link">
+                           <img class="go"  src="{% static 'main/img/go.png' %}"  alt="Кнопка «к товару»"> {{p}}</p>
+                                      <span class="Link_image">
+                                            <img class="product_img" title="" align="left" src="{{ p.image.url }}"  alt="Линзы"  />
+                                      </span></a>
+                        {% endif %}
+                        {% endfor %}
+                   </div>
+                <a class="close" title="Закрыть" href="#"></a>
+               </div>
+                </div>
+
+          </div>
+      <div  class="col1">
+
+          <div class="card-header py-3 text-white " style="background: #20B2AA;  ">
+            <h4 class="my-0 fw-normal">Растворы и капли</h4>
+          </div>
+          <div class="card-body" style="background: #FFFFE0;  ">
+            <h1 class="card-title pricing-card-title" style="color:#000000">от 450₽</h1>
+            <ul class="list-unstyled mt-3 mb-4" style="background: #FFFFE0 ">
+              <li>Для хранения и </li>
+              <li>дезинфекции линз.</li>
+              <li >К каждому раствору</li>
+              <li>идёт свой контейнер.</li>
+            </ul>
+            <a href="#solutions" class="buttonn" >Категории</a>
+            <a href="#x" class="overlay" id="solutions"></a>
+               <div class="popup">
+                <h5 >Мы предлагаем вам растворы и капли следующих фирм:</h5><br>
+                   <div class = "block">
+                       {% for p in product %}
+                       {% if p.group == 'solutions' %}
+                       <a href="{% url 'product_detail' id=p.id url_slug=p.url_slug %}"  class="Link" ><p class="text_link">
+                           <img class="go"  src="{% static 'main/img/go.png' %}"  alt="Кнопка «к товару»"> {{p}}</p>
+                                      <span class="Link_image">
+                                            <img class="product_img" title="" src="{{ p.image.url }}" alt="Растворы и капли"  />
+                                      </span></a>
+                        {% endif %}
+                        {% endfor %}
+                   </div>
+                <a class="close" title="Закрыть" href="#"></a>
+               </div>
+                </div>
+
+      </div>
+         <div  class="col2">
+
+          <div class="card-header py-3 text-white " style="background: #20B2AA;  ">
+            <h4 class="my-1 fw-normal">Аксессуары</h4>
+          </div>
+          <div class="card-body" style="background: #FFFFE0;  ">
+            <h1 class="card-title pricing-card-title" style="color:#000000">от 400₽</h1>
+            <ul class="list-unstyled mt-3 mb-4" style="background: #FFFFE0 ">
+              <li>Женские и мужские</li>
+              <li>наборы для линз.</li>
+              <li >Футляры для очков.</li>
+              <li>Шнурки и чистящие салфетки.</li>
+            </ul>
+            <a href="#accessories" class="buttonn" >Категории</a>
+            <a href="#x" class="overlay" id="accessories"></a>
+               <div class="popup">
+                   <h5>Мы предлагаем вам следующие аксессуары:</h5><br>
+                    <div class = "block">
+                       {% for p in product %}
+                       {% if p.group == 'Accessories' %}
+                       <a href="{% url 'product_detail' id=p.id url_slug=p.url_slug %}"  class="Link" ><p class="text_link">
+                           <img class="go"  src="{% static 'main/img/go.png' %}"  alt="Кнопка «к товару»"> {{p}}</p>
+                                      <span class="Link_image">
+                                            <img class="product_img" title="" align="left" src="{{ p.image.url }}" alt="Аксессуары"  />
+                                      </span></a>
+                        {% endif %}
+                        {% endfor %}
+                   </div>
+                <a class="close" title="Закрыть" href="#"></a>
+               </div>
+                </div>
+
+      </div>
+        <div  class="col3">
+
+          <div class="card-header py-3 text-secondary " style="background: #FFFFE0;  ">
+            <h4 class="my-0 fw-normal">Очки и оправы</h4>
+          </div>
+          <div class="card-body" style="background: #20B2AA;  ">
+            <h1 class="card-title pricing-card-title" style="color:#FFFFE0">от 400₽</h1>
+            <ul class="list-unstyled mt-3 mb-4" style="background: #20B2AA ">
+              <li >Женские</li>
+              <li >Мужские</li>
+              <li >Плюсовые</li>
+              <li  >Минусовые</li>
+            </ul>
+            <a href="#glasses" class="button" >Категории</a>
+            <a href="#x" class="overlay" id="glasses"></a>
+               <div class="popup">
+                <h5>Мы предлагаем вам следующие очки и оправы:</h5><br>
+                   <div class = "block">
+                       {% for p in product %}
+                       {% if p.group == 'glasses' %}
+                       <a href="{% url 'product_detail' id=p.id url_slug=p.url_slug %}"  class="Link" ><p class="text_link">
+                           <img class="go"  src="{% static 'main/img/go.png' %}"  alt="Кнопка «к товару»"> {{p}}</p>
+                                      <span class="Link_image">
+                                            <img class="product_img" title="" align="left" src="{{ p.image.url }}" alt="Очки и оправы"  />
+                                      </span></a>
+                        {% endif %}
+                        {% endfor %}
+                   </div>
+                <a class="close" title="Закрыть" href="#"></a>
+               </div>
+                </div>
+
+    </div>
+
+
+
+
+
+  </main>
+</body>
+</html>
+<div id = "Information" style="font-family: CENTURY GOTHIC, sans-serif;">
+    "ГлазОК" Тверская область, город Торжок, ул. Металлистов, д.1"Д"  ОГРН:00000000000</div>

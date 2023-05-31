@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block "ГлазОК" %}Офтальмологический кабинет "ГлазОК"{% endblock %}</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'main/css/search.css' %}" >
+
+</head>
+<body>
+
+<div class="d-flex " style="background: #20B2AA">
+      <a href="/" class="d-flex  ">
+       <span class="name">Офтальмологический кабинет "ГлазОК"</span>
+      </a>
+      <a class="about_us"  href="{% url 'about_us' %}">О нас</a>
+
+<!--          Если пользователь авторизован то будет отображен логин-->
+          {% if request.user.is_authenticated %}
+          <a class="authorization" href="{% url 'logout' %}">{{user.username}}(Выйти)</a>
+          {% else %}
+            <a class="authorization" href="{% url 'login' %}">Авторизация на сайте</a>
+          {% endif %}
+          <a class="home" href="/">Главная страница</a>
+          <a href="{% url 'cart:cart_detail' %}" class="icon_basket">
+
+              <div class="quantity_basket">
+                  {% with total_items=cart|length %}
+                {% if cart|length > 0 %}
+                  <b>{{ total_items }}</b>
+                {% endif %}
+                  {% endwith %}</div>
+
+              <svg width="32" height="30"  style="margin-right:17px;margin-top:3px; background-color: #FFFFFF;border-radius: 20px;" viewBox="-9 0 45 33" fill="#FFFFFF" >
+              <path d="M5.92857 13.1829L6.92857 5.04025C6.92857 3.24143 8.39964 1.7832 10.2143 1.7832H14.7857C16.6004
+              1.7832 18.0714 3.24143 18.0714 5.04025L19.0714 13.1829M2 8.29729L1 26.7539C1 28.5527 2.47106 30.0109
+              4.28571 30.0109H20.7143C22.5289 30.0109 24 28.5527 24 26.7539L23 8.29729H2Z"
+                    stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+              <form action="{% url 'search' %}" method="get" class="search">
+                  <input type="search" name="q" class="input_search" placeholder="Поиск по аксессуарам глаза">
+                  <i class="fa fa-search"></i>
+                </form>
+
+    </div>
+
+
+
+
+
+<h1>Результаты поиска:</h1>
+{% with object_list.count as total_products %}
+    <h4>Найдено товаров: {{total_products}}</h4>
+            {% endwith %}
+
+{% if object_list %}
+    <div class="block">
+
+      {% for product in object_list %}
+            {% if product.group == 'lenses' %}
+                <li class="search_product" ><a class="product_link" href="{{ product.get_absolute_url }}">
+                <p class="name_product">{% ifchanged %}{{ product.name }}{% endifchanged %}</p>
+                    <div class="information_product">
+                        <p>Плановая замена: {{ product.slug }}</p>
+                        <p>Радиус кривизны: {{ product.radius }}</p>
+                            <p>Оптическая сила: от -1.00 до -6.00</p>
+                            <p class="price">Цена за ед. товара: <b>{{product.price}} ₽</b></p>
+                            <button class="mybutton">Перейти к товару</button>
+                    </div>
+
+                <img class="image_product" title="" align="left" src="{{ product.image.url }}"  alt="Линзы"  />
+
+                </a>
+
+                </li>
+
+            {% elif product.group == 'glasses'%}
+                <li class="search_product" ><a class="btn btn-default btn-sm" href="{{ product.get_absolute_url }}">
+                <p class="name_product">{% ifchanged %}{{ product.name }}{% endifchanged %}</p>
+                    <div class="information_product">
+                        <p>Плановая замена: {{ product.slug }}</p>
+                            <p>Оптическая сила: от -0.75 до +7.00</p>
+                            <p class="price">Цена за ед. товара: <b>{{product.price}} ₽</b></p>
+                            <button class="mybutton">Перейти к товару</button>
+                    </div>
+
+                    <img class="image_product" title="" align="left" src="{{ product.image.url }}"  alt="Линзы"  />
+                </a>
+                </li>
+            {% elif product.group != 'lenses'%}
+                <li class="search_product" ><a class="btn btn-default btn-sm" href="{{ product.get_absolute_url }}">
+                <p class="name_product">{% ifchanged %}{{ product.name }}{% endifchanged %}</p>
+                        <div class="information_product">
+                        <p>Плановая замена: {{ product.slug }}</p>
+                            <p class="price">Цена за ед. товара: <b>{{product.price}} ₽</b></p>
+                            <button class="mybutton">Перейти к товару</button>
+                    </div>
+
+                    <img class="image_product" title="" align="left" src="{{ product.image.url }}"  alt="Линзы"  />
+                    </a>
+                </li>
+
+            {% endif %}
+
+
+      {% endfor %}
+    </div>
+        {% else %}
+            <p>К сожалению ничего не найдено, попробуйте повторить запрос с другой формулировкой</p>
+{% endif %}
+
+<div id = "Information" style="font-family: CENTURY GOTHIC, sans-serif;">
+    "ГлазОК" Тверская область, город Торжок, ул. Металлистов, д.1"Д"  ОГРН:00000000000</div>

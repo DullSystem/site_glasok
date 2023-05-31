@@ -1,0 +1,612 @@
+body{background: #FFFFFF;
+    color: #000000;
+    background-size: 100%;
+    background-attachment: fixed;
+    border-bottom: 1px solid #DCDCDC;
+    }
+
+#Information{
+    position: absolute;
+    bottom:0;
+    right: 35%;
+    text-align: center;
+    font-size: 12px;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+    /* Глазок */
+.d-flex {
+    height: 55px;
+    font-size: 27px;
+    text-decoration: none;
+    font-family: "CENTURY GOTHIC", sans-serif;
+}
+
+.name {
+    color:#FFFFFF;
+    margin-left:30px;
+    white-space: pre;
+}
+
+
+    /* О нас */
+.about_us {
+    white-space: pre;
+    margin-right:17px;
+    margin-top:13px;
+    margin-left: 470px;
+    color:#FFFFFF;
+    font:menu;
+    font-size: 17px;
+    text-decoration: none;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+.about_us:hover {
+    color:#FFFFFF;
+}
+
+    /*Авторизация*/
+.authorization {
+    white-space: pre;
+    margin-right:17px;
+    margin-top:13px;
+    font:menu;
+    font-size: 17px;
+    color:#FFFFFF;
+    text-decoration: none;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+.authorization:hover {
+    color:#FFFFFF;
+}
+
+    /*Ссылка на главную страницу*/
+.home {
+    white-space: pre;
+    margin-right:17px;
+    margin-top:13px;
+    font:menu;
+    font-size: 17px;
+    color:#FFFFFF;
+    text-decoration: none;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+.home:hover {
+    color:#FFFFFF;
+}
+
+
+/*- Поиск - */
+.search{
+    position: absolute;
+    top: 0;
+    left: 800px;
+    transform: translate(-30%,-30%);
+    transition: all 1s;
+    width: 30px;
+    height: 50px;
+    background: #20B2AA;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid #20B2AA;
+    padding: 0px;
+    margin-top:1.1%
+
+}
+
+.input_search{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 35px;
+    line-height: 75px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 0.6em;
+    border-radius: 20px;
+    padding:  10px;
+
+}
+
+.fa{
+    box-sizing: border-box;
+    padding: 7px;
+    width: 30px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.0em;
+    transition: all 1s;
+
+}
+
+.search:hover{
+    width: 200px;
+    cursor: pointer;
+
+}
+
+.search:hover input{
+    display: block;
+
+}
+
+.search:hover .fa{
+    background: #20B2AA;
+    color: #000000;
+}
+
+
+/*Авторизация*/
+.authorization {
+    white-space: pre;
+    margin-right:17px;
+    margin-top:13px;
+    font:menu;
+    font-size: 17px;
+    color:#FFFFFF;
+    text-decoration: none;
+    font-family: "CENTURY GOTHIC", sans-serif;
+    }
+
+.authorization:hover {
+    color:#FFFFFF;
+}
+
+
+/*- Стиль страницы "корзина" - */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "CENTURY GOTHIC", sans-serif;
+
+}
+
+shopping-cart {
+  width: 1050px;
+  height: 423px;
+  margin: 80px auto;
+  background: #FFFFFF;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  width: 1450px;
+  height: 80px;
+  border-bottom: 1px solid #DCDCDC;
+  padding: 0px 30px;
+  color: #5E6977;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.item {
+  padding: 20px 30px;
+  height: 120px;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.item:nth-child(3) {
+  border-top:  1px solid #E1E8EE;
+  border-bottom:  1px solid #E1E8EE;
+}
+
+.buttons {
+  position: relative;
+  padding-top: 30px;
+  margin-right: 60px;
+}
+.delete-btn,
+.like-btn {
+  display: inline-block;
+  Cursor: pointer;
+}
+.delete-btn {
+  width: 18px;
+  height: 17px;
+  background: url("../img/close.png") no-repeat center;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+
+
+.is-active {
+  animation-name: animate;
+  animation-duration: .8s;
+  animation-iteration-count: 1;
+  animation-timing-function: steps(28);
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate {
+  0%   { background-position: left;  }
+  50%  { background-position: right; }
+  100% { background-position: right; }
+}
+
+.image {
+  margin-right: 40px;
+    margin-top: 0px;
+
+}
+
+.name1{
+    margin-left: 310px;
+}
+
+
+Let’s add some basic style to  product name and description.
+.description {
+  padding-top: 0px;
+  margin-right: 60px;
+  width: 115px;
+
+}
+
+.description span {
+  display: block;
+  font-size: 15px;
+  color: #000000;
+  font-weight: 400;
+  margin-top: 5px;
+   border: 0px solid #20B2AA;
+
+}
+
+.description span:first-child {
+  margin-bottom: 5px;
+}
+.description span:last-child {
+  font-weight: 300;
+  color: #000000;
+  line-height: 1.5;
+}
+
+.quantity {
+   position: absolute;
+  text-align: center;
+  padding-top: 27px;
+  margin-left: 660px;
+}
+.quantity input {
+  -webkit-appearance: none;
+  border: none;
+  text-align: center;
+  width: 82px;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.quantity_update {
+    color: #FFFFFF;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 5px;
+    border: 5px solid #20B2AA;
+    background-color: #20B2AA;
+}
+
+button[class*=btn] {
+  width: 30px;
+  height: 30px;
+  background-color: #E1E8EE;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+
+}
+.minus-btn img {
+  margin-bottom: 3px;
+
+}
+.plus-btn img {
+  margin-top: -1px;
+  margin-right: 1px;
+}
+
+button:focus,
+input:focus {
+  outline:0;
+}
+
+.total-price {
+  position: absolute;
+  width: 83px;
+
+  text-align: center;
+  font-size: 20px;
+  color: #43484D;
+  font-weight: 300;
+  margin-left: 750px;
+}
+
+.total-price1 {
+  position: absolute;
+
+  text-align: center;
+  font-size: 20px;
+  color: #43484D;
+  font-weight: 300;
+  margin-left: 1040px;
+}
+
+/* вернуться в магазин ссылка */
+.button_light {
+    height: 30px;
+    margin-top: 35px;
+    margin-left: 30px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    border-radius: 10px;
+    border: 5px solid #A9A9A9;
+    background-color: #A9A9A9;
+    text-decoration: none;
+}
+
+.button_light:hover{
+    color: #FFFFFF;
+    background: #20B2AA;
+    border: 5px solid #20B2AA;
+}
+
+/* Оформить заказ ссылка */
+.button_orders {
+    margin: 25px;
+    text-decoration: none;
+    color: #FFFFFF;
+    border-radius: 10px;
+    border: 5px solid #A9A9A9;
+    background-color: #A9A9A9;
+}
+
+.button_orders:hover{
+ transform: scale(1.05);
+ color: #FFFFFF;
+ background: #20B2AA;
+ border: 5px solid #20B2AA;
+}
+
+.button_orders:hover .a-btn-symbol{
+ opacity: 0.5;
+ transform: rotate(360deg);
+}
+
+.button_orders:active{
+ transform: scale(1.1);
+}
+
+.total_amount {
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+
+/* сумма за полное колличество товара */
+.price {
+    position:absolute;
+     margin-left: 720px;
+     margin-top: -75px;
+}
+.number {
+    position:absolute;
+     margin-left: 700px;
+     margin-top: -25px;
+}
+
+.price1 {
+    position: absolute;
+    margin-left: 980px;
+    margin-top: -75px;
+}
+
+.price2 {
+    position: absolute;
+    margin-left: 1250px;
+    margin-top: -25px;
+}
+
+.empty_basket {
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 5px;
+    width: 400px;
+    height: 400px;
+}
+
+
+/* мобильная версия */
+@media (max-width: 800px) {
+  .d-flex {
+        max-width: 992x;
+        height: 150px;
+    }
+    /*Глазок*/
+    .name {
+        white-space: pre;
+        font-size: 19px;
+        margin-left:30px;
+        }
+
+    /* О нас */
+    .about_us {
+    white-space: pre;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 0px;
+    margin-top: 50px;
+    margin-left: -385px;
+    }
+
+    /* Ссылка на главную страницу */
+    .home {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 0px;
+    }
+
+    /* Авторизация */
+
+    .authorization {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-right: 0px;
+    }
+
+
+    /*поиск*/
+    .search{
+    margin-top: 110px;
+    left: 240px;
+    height: 20px;
+    }
+
+    .input_search {
+        width: 100%;;
+        height: 10px;
+        left: -15px;
+        font-size: 0.3em;
+    }
+
+    .fa {
+        height: 29px;
+        font-size: 0.9em;
+        padding: 3px;
+        transition: all 0.1s;
+    }
+
+    .search:hover .fa{
+        background: #20B2AA;
+        color: #000000;
+        }
+
+    .title {
+      width: 450px;
+    }
+
+
+    .item {
+        height: auto;
+        margin-bottom: 70px;
+      }
+
+    .buttons {
+    margin-right: 0px;
+    padding-top: 40px;
+    margin-right: 20px;
+    }
+
+    .name1 {display: none;
+    }
+
+    .total_amount {
+    position: absolute;
+    margin-bottom: 0px;
+    margin-top: 25px;
+    margin-left: 235px;
+    font-size: 12px;
+    }
+
+    .button_orders {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 30px;
+    font-size: 12px;
+    }
+
+    .quantity {
+   position: absolute;
+  text-align: center;
+  padding-top: 100px;
+  margin-left: 55px;
+  font-size: 12px;
+  }
+
+  .quantity input {
+  font-size: 12px;
+    }
+
+   .price {
+    position: absolute;
+     margin-left: 5px;
+     margin-top: 87px;
+     font-size: 12px;
+    }
+
+    .total-price {
+      width: 83px;
+      margin-top: 87px;
+      margin-left: 0px;
+      text-align: center;
+      font-size: 12px;
+      color: #43484D;
+      font-weight: 300;
+      margin-left: 140px;
+    }
+
+
+   .description span {
+    font-size: 12px;
+    margin-left: 5px;
+    }
+
+
+    .number {
+    display: none;
+    }
+
+    .price1 {
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 108px;
+    font-size: 12px;
+    }
+
+    .total-price1 {
+   position: absolute;
+   margin-top: 108px;
+   font-size: 12px;
+   margin-left: 160px;
+    }
+
+    .empty_basket {
+    margin-top: 160px;
+    margin-left: 145px;
+    width: 190px;
+    height: 190px;
+    }
+
+  #Information{
+    position: absolute;
+    bottom:0;
+    right: 10%;
+    text-align: center;
+    font-size: 9px;
+
+    }
+
+}
+

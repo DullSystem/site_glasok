@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block "ГлазОК" %}"ГлазОК" - корзина{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'main/css/basket.css' %}" >
+    <script src="{% static 'main/js/basket.js' %}"></script>
+</head>
+<body>
+<script>
+function TFun(){
+      alert(document.getElementById('star-1').value);
+  }</script>
+
+<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom" style="background: #20B2AA">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none" style="font-size: 25px; font-family: CENTURY GOTHIC, sans-serif; ">
+
+
+       <span style=" margin-left:70px; color:#FFFFFF">Офтальмологический кабинет "ГлазОК"</span>
+
+      </a>
+      <div class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+          <a  style="margin-right:17px; margin-top:10px; color:#FFFFFF; font:menu; font-size: 17px; text-decoration: none; font-family: CENTURY GOTHIC, sans-serif;" href="#">О нас</a>
+      <a style="margin-right:17px; margin-top:10px; font:menu; font-size: 17px; color:#FFFFFF; text-decoration: none; font-family: CENTURY GOTHIC, sans-serif;" href="#">Войти</a>
+       <a style="margin-right:17px; margin-top:10px; font:menu; font-size: 17px; color:#FFFFFF; text-decoration: none; font-family: CENTURY GOTHIC, sans-serif;" href="/">Главная страница</a>
+
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+          <!--        Поиск по сайту-->
+          <form class="search" action="">
+  <input type="search" class="input_search">
+  <i class="fa fa-search"></i>
+</form>
+      </div>
+</div>
+<div class="shopping-cart">
+
+      <!-- Title -->
+      <div class="title">
+          <H5>Ваша корзина</H5>
+      </div>
+        <div class="name">
+            Наименование
+        </div>
+    <div class="number">
+            Количество
+        </div>
+    <div class="price">
+            Сумма
+        </div>
+      <!-- Товар #1 -->
+      <div class="item">
+        <div class="buttons">
+<!--            Кнопка удалить-->
+          <span class="delete-btn"></span>
+<!--            Кнопка добавить в избранное / лайк-->
+          <span class="like-btn" id="star-1"  value="1" onclick="TFun()"></span>
+        </div>
+
+        <div class="image">
+           <img style="width: 135px; height: 115px; " src="{% static 'main/img/AirOptix.jpg' %}" alt="image" />
+        </div>
+
+        <div class="description">
+          <span>Название</span>
+          <span>Базовая кривизна: </span>
+          <span>Оптическая сила :</span>
+        </div>
+
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button">
+            <img style="width: 15px; height: 15px;" src="{% static 'main/img/plus-sign.png' %}" alt="" />
+          </button>
+          <input type="text" name="name" value="1">
+          <button class="minus-btn" type="button" name="button">
+            <img style="width: 15px; height: 15px;" src="{% static 'main/img/minus-sign.png' %}" alt="" />
+          </button>
+        </div>
+
+        <div class="total-price">$870</div>
+      </div>
+
+      <!-- Товар #2 -->
+      <div class="item">
+        <div class="buttons">
+          <span class="delete-btn"></span>
+          <span class="like-btn"></span>
+        </div>
+
+        <div class="image">
+           <img style="width: 135px; height: 115px; " src="{% static 'main/img/AirOptix.jpg' %}" alt="image" />
+        </div>
+
+        <div class="description">
+          <span>Название</span>
+          <span>Базовая кривизна: </span>
+          <span>Оптическая сила :</span>
+        </div>
+
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button">
+            <img style="width: 15px; height: 15px;" src="{% static 'main/img/plus-sign.png' %}" alt="" />
+          </button>
+          <input type="text" name="name" value="1">
+          <button class="minus-btn" type="button" name="button">
+            <img style="width: 15px; height: 15px;" src="{% static 'main/img/minus-sign.png' %}" alt="" />
+          </button>
+        </div>
+
+        <div class="total-price">$870</div>
+      </div>
+
+      <!-- Товар #3 -->
+      <div class="item">
+        <div class="buttons">
+          <span class="delete-btn"></span>
+          <span class="like-btn"></span>
+        </div>
+
+        <div class="image">
+           <img style="width: 135px; height: 115px; " src="{% static 'main/img/AirOptix.jpg' %}" alt="image" />
+        </div>
+
+        <div class="description">
+         <span>Название</span>
+          <span>Базовая кривизна: </span>
+          <span>Оптическая сила :</span>
+        </div>
+
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button">
+            <img style="width: 15px; height: 15px;" src="{% static 'main/img/plus-sign.png' %}" alt="" />
+          </button>
+          <input type="text" name="name" value="1">
+          <button class="minus-btn" type="button" name="button">
+            <img style="width: 15px; height: 15px;" src="{% static 'main/img/minus-sign.png' %}" alt="" />
+          </button>
+        </div>
+
+        <div class="total-price">$870</div>
+      </div>
+    <div class="total">Итого:</div>
+</body>
+</html>
+<div id = "Information" style="font-family: CENTURY GOTHIC, sans-serif;">"ГлазОК" Тверская область, город Торжок, ул. Металлистов, д.1"Д"  ОГРН:00000000000</div>
